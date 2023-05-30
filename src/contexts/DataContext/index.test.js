@@ -22,7 +22,7 @@ describe("When a data context is created", () => {
       api.loadData = jest.fn().mockRejectedValue("error on calling events");
 
       render(<DataProvider />)
-      const dataDisplayed = await screen.findByText("error on calling events");
+      const dataDisplayed = await screen.findByText("Error: error on calling events");
       expect(dataDisplayed).toBeInTheDocument();
     });
   });
