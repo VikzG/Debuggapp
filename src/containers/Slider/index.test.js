@@ -3,6 +3,7 @@ import Slider from "./index";
 import { api, DataProvider } from "../../contexts/DataContext";
 
 const data = {
+  events:[],
   focus: [
     {
       title: "World economic forum",

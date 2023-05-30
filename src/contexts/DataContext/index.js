@@ -26,7 +26,7 @@ export const DataProvider = ({ children }) => {
   const getData = useCallback(async () => {
     try {
       const loadedData = await api.loadData();
-      loadedData.events.sort((a, b) => new Date(b.date) - new Date(a.date));
+      loadedData?.events.sort((a, b) => new Date(b.date) - new Date(a.date));
       setData(loadedData);
     } catch (err) {
       setError(err);
@@ -46,7 +46,7 @@ export const DataProvider = ({ children }) => {
   }, [data]);
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <div>Error: {error}</div>;
   }
 
   if (!data) {
